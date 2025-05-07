@@ -16,6 +16,7 @@ library(tidyr)
 library(dplyr)
 library(ggplot2)
 library(mvtnorm)
+library(here)
 ```
 
 ```{r setup, include = FALSE}
@@ -120,7 +121,7 @@ plot_contour_binary(Phi, Cole.inv, -1, c(0.01,0.99), c(0.01,0.99), gridsize, "P(
   axis.ticks.y = element_blank(),
   axis.title.y = element_blank()
 ) + plot_layout(guides = 'collect', ncol = 2)
-ggsave(filename = "~/Dropbox/DimitriadisPohleWermuth/Binary Correlation/replication_BCor/application/plots/phi_bounds.pdf", width = 200, height = 90, device = "pdf", units = "mm")
+ggsave(filename = here("application/plots/phi_bounds.pdf"), width = 200, height = 90, device = "pdf", units = "mm")
 ```
 
 
@@ -151,7 +152,7 @@ plot_contour_trivial(0.3, c(0.01,0.99), c(0.01,0.99), 10, "P(A)", "P(B)", 40) + 
   axis.ticks.y = element_blank(),
   axis.title.y = element_blank()
 ) + plot_layout(guides = 'collect', ncol = 3)
-ggsave(filename = "~/Dropbox/DimitriadisPohleWermuth/Binary Correlation/replication_BCor/application/plots/cole_comparison_03.pdf", height = 200 - adj_height, width = (1+sqrt(5))/2*200 - adj_width, device = "pdf", units = "mm")
+ggsave(filename = here("application/plots/cole_comparison_03.pdf"), height = 200 - adj_height, width = (1+sqrt(5))/2*200 - adj_width, device = "pdf", units = "mm")
 
 plot_contour_trivial(0.7, c(0.01,0.99), c(0.01,0.99), 10, "P(A)", "P(B)", 40) + coord_fixed() + 
   theme_minimal(base_size = base_size) + ggtitle("Cole's C") + theme(plot.title = element_text(hjust = 0.5, size = 18)) + theme(
@@ -173,7 +174,7 @@ plot_contour_trivial(0.7, c(0.01,0.99), c(0.01,0.99), 10, "P(A)", "P(B)", 40) + 
   axis.ticks.y = element_blank(),
   axis.title.y = element_blank()
 ) + plot_layout(guides = 'collect', ncol = 3)
-ggsave(filename = "~/Dropbox/DimitriadisPohleWermuth/Binary Correlation/replication_BCor/application/plots/cole_comparison_07.pdf", height = 200 - adj_height, width = (1+sqrt(5))/2*200 - adj_width, device = "pdf", units = "mm")
+ggsave(filename = here("application/plots/cole_comparison_07.pdf"), height = 200 - adj_height, width = (1+sqrt(5))/2*200 - adj_width, device = "pdf", units = "mm")
 
 plot_contour_trivial(-0.3, c(0.01,0.99), c(0.01,0.99), 10, "P(A)", "P(B)", 40) + coord_fixed() + 
   theme_minimal(base_size = base_size) + ggtitle("Cole's C") + theme(plot.title = element_text(hjust = 0.5, size = 18)) + theme(
@@ -195,7 +196,7 @@ plot_contour_trivial(-0.3, c(0.01,0.99), c(0.01,0.99), 10, "P(A)", "P(B)", 40) +
   axis.ticks.y = element_blank(),
   axis.title.y = element_blank()
 ) + plot_layout(guides = 'collect', ncol = 3)
-ggsave(filename = "~/Dropbox/DimitriadisPohleWermuth/Binary Correlation/replication_BCor/application/plots/cole_comparison_-03.pdf", height = 200 - adj_height, width = (1+sqrt(5))/2*200 - adj_width, device = "pdf", units = "mm")
+ggsave(filename = here("application/plots/cole_comparison_-03.pdf"), height = 200 - adj_height, width = (1+sqrt(5))/2*200 - adj_width, device = "pdf", units = "mm")
 
 plot_contour_trivial(-0.7, c(0.01,0.99), c(0.01,0.99), 10, "P(A)", "P(B)", 40) + coord_fixed() + 
   theme_minimal(base_size = base_size) + ggtitle("Cole's C") + theme(plot.title = element_text(hjust = 0.5, size = 18)) + theme(
@@ -217,7 +218,7 @@ plot_contour_trivial(-0.7, c(0.01,0.99), c(0.01,0.99), 10, "P(A)", "P(B)", 40) +
   axis.ticks.y = element_blank(),
   axis.title.y = element_blank()
 ) + plot_layout(guides = 'collect', ncol = 3)
-ggsave(filename = "~/Dropbox/DimitriadisPohleWermuth/Binary Correlation/replication_BCor/application/plots/cole_comparison_-07.pdf", height = 200 - adj_height, width = (1+sqrt(5))/2*200 - adj_width, device = "pdf", units = "mm")
+ggsave(filename = here("application/plots/cole_comparison_-07.pdf"), height = 200 - adj_height, width = (1+sqrt(5))/2*200 - adj_width, device = "pdf", units = "mm")
 ```
 
 

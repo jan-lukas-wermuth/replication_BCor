@@ -17,6 +17,7 @@ knitr::opts_chunk$set(tidy.opts = list(width.cutoff = 60), tidy = TRUE, echo = T
 library(BCor) # Install via remotes::install_github("jan-lukas-wermuth/BCor") if not done yet
 # Package names
 packages <- c("tidyverse",
+              "here",
               "mvtnorm",
               "readxl", # import from Excel
               "formatR", # 'double'-pipe
@@ -39,7 +40,7 @@ for(i in packages){
 Load data in terms of p, q and r. The structure of pqr_arr is the following: The first dimension marks the first drug and the second dimension the second drug. The third dimension marks p, q or r. p always refers to the relative consumption frequency of the first drug in the comparison and q to the relative consumption frequency of the second drug in the comparison. r denotes the joint relative consumption frequency.
 
 ```{r data}
-load("~/Dropbox/DimitriadisPohleWermuth/Binary Correlation/replication_BCor/application/data_pqr/pqr_arr.RData")
+load(here("application/data_pqr/pqr_arr.RData"))
 ```
 
 Load functions:
@@ -185,7 +186,7 @@ plot_contour_matrix(df_phi, "", "", 40) + coord_fixed() + theme_minimal(base_siz
     axis.title.y = element_blank(),
     legend.text = element_text(size = size)
 ) + plot_layout(guides = 'collect', ncol = 3)
-ggsave(filename = "~/Dropbox/DimitriadisPohleWermuth/Binary Correlation/replication_BCor/application/plots/drugs_comparison.pdf", height = 200 - adj_height, width = (1+sqrt(5))/2*200 - adj_width, device = "pdf", units = "mm")
+ggsave(filename = here("application/plots/drugs_comparison.pdf"), height = 200 - adj_height, width = (1+sqrt(5))/2*200 - adj_width, device = "pdf", units = "mm")
 ```
 
 \newpage
@@ -329,7 +330,7 @@ ggplot(data_Q, aes(drugs, Q_est)) +
     ylim(0,1.06)
 
 
-ggsave(filename = "~/Dropbox/DimitriadisPohleWermuth/Binary Correlation/replication_BCor/application/plots/QCPhi_application_inference.pdf", height = 200, width = (1+sqrt(5))/2*200, device = cairo_pdf, units = "mm")
+ggsave(filename = here("application/plots/QCPhi_application_inference.pdf"), height = 200, width = (1+sqrt(5))/2*200, device = cairo_pdf, units = "mm")
 
 
 ```
@@ -357,7 +358,7 @@ ggplot(data_Q, aes(drugs, Q_est)) +
     ylim(0,1.06)
 
 
-ggsave(filename = "~/Dropbox/DimitriadisPohleWermuth/Binary Correlation/replication_BCor/application/plots/QCPhi_application_inference_final.pdf", height = 200, width = (1+sqrt(5))/2*200, device = cairo_pdf, units = "mm")
+ggsave(filename = here("application/plots/QCPhi_application_inference_final.pdf"), height = 200, width = (1+sqrt(5))/2*200, device = cairo_pdf, units = "mm")
 ```
 
 
@@ -501,7 +502,7 @@ ggplot(data_Q, aes(drugs, Q_est)) +
     ylim(0,1.06)
 
 
-ggsave(filename = "~/Dropbox/DimitriadisPohleWermuth/Binary Correlation/replication_BCor/application/plots/QCPhi_application_inference_meth.pdf", height = 200, width = (1+sqrt(5))/2*200, device = cairo_pdf, units = "mm")
+ggsave(filename = here("application/plots/QCPhi_application_inference_meth.pdf"), height = 200, width = (1+sqrt(5))/2*200, device = cairo_pdf, units = "mm")
 
 
 ```
@@ -529,6 +530,6 @@ ggplot(data_Q, aes(drugs, Q_est)) +
     ylim(0,1.06)
 
 
-ggsave(filename = "~/Dropbox/DimitriadisPohleWermuth/Binary Correlation/replication_BCor/application/plots/QCPhi_application_inference_meth_final.pdf", height = 200, width = (1+sqrt(5))/2*200, device = cairo_pdf, units = "mm")
+ggsave(filename = here("application/plots/QCPhi_application_inference_meth_final.pdf"), height = 200, width = (1+sqrt(5))/2*200, device = cairo_pdf, units = "mm")
 ```
 
